@@ -3,10 +3,11 @@ import axios from "axios";
 
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
+import { useGeceModu } from "./components/hooks/geceModuAc";
 
 const App = () => {
   const [coinData, setCoinData] = useState([]);
-  const [geceModu, setGeceModu] = useState(false);
+  const [geceModu, setGeceModu] = useGeceModu(); {/*useState(false) iken sayfa dark modeda kapandıysa tekrar lightMode'da açılıyor. Çünkü useState(false)...*/}
 
   useEffect(() => {
     axios
